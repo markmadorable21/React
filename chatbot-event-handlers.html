@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Chatbot</title>
+    <title>Chatbot with Event Handlers</title>
   </head>
 
   <body>
@@ -44,32 +44,52 @@
         );
       }
 
-      /* 1. Save the data
-         
-
-      
-
-      */
-
-      function App() {
+      function ChatMessages() {
         const chatMessages = [
           {
             message: 'bayot bernard',
             sender: 'user',
+            id: 'id1',
           },
           {
             message: 'bulan sa mga bayot',
             sender: 'robot',
+            id: 'id2',
+          },
+          {
+            message: '2bayot bernard',
+            sender: 'user',
+            id: 'id3',
+          },
+          {
+            message: '2bulan sa mga bayot',
+            sender: 'robot',
+            id: 'id4',
           },
         ];
+
+        return (
+          <>
+            {chatMessages.map((chatMessage) => (
+              <ChatMessage
+                message={chatMessage.message} 
+                sender={chatMessage.sender}
+                key={chatMessage.id}
+              />
+            ))}
+          </>
+        );
+      }
+
+      // 1. Save the data
+      function App() {
+        // 2. Convert the object into user-defined HTML components
+
         return (
           <>
             <p>Chatbot</p>
             <ChatInput />
-            <ChatMessage message="hello badeng" sender="user" />
-            <ChatMessage message="Happy pride month" sender="robot" />
-            <ChatMessage message="Bayot si Bernard" sender="user" />
-            <ChatMessage message="Araw ng mga bayot" sender="robot" />
+            <ChatMessages />
           </>
         );
       }
