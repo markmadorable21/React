@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Chatbot</title>
+  </head>
+
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+    <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      // babel is JS compiler
+
+      // JSX as enhanced JS for React
+      // JS XML
+
+      // const button = <button>hello</button>;
+      // const paragraph = <p>Paragraph of text</p>;
+      function ChatInput() {
+        return (
+          <>
+            <input placeholder="Send message to Chatbot" size="30" />
+            <button>Send</button>
+          </>
+        );
+      }
+
+      function ChatMessage({ message, sender }) {
+        // const message = props.message;
+        // const sender = props.sender;
+        // shortcut
+        // const {message, sender} = props;
+
+        return (
+          <div>
+            {sender === 'robot' && <img src="robot.png" width="50" />}
+            {message}
+            {sender === 'user' && <img src="user_icon.png" width="50" />}
+          </div>
+        );
+      }
+
+      /* 1. Save the data
+         
+
+      
+
+      */
+
+      function App() {
+        const chatMessages = [
+          {
+            message: 'bayot bernard',
+            sender: 'user',
+          },
+          {
+            message: 'bulan sa mga bayot',
+            sender: 'robot',
+          },
+        ];
+        return (
+          <>
+            <p>Chatbot</p>
+            <ChatInput />
+            <ChatMessage message="hello badeng" sender="user" />
+            <ChatMessage message="Happy pride month" sender="robot" />
+            <ChatMessage message="Bayot si Bernard" sender="user" />
+            <ChatMessage message="Araw ng mga bayot" sender="robot" />
+          </>
+        );
+      }
+
+      const container = document.querySelector('.js-container');
+      const root = ReactDOM.createRoot(container);
+      root.render(<App />);
+      // setInterval(() => {
+      //   root.render(<p>Current time: {dayjs().format('HH:mm:ss')}</p>);
+      // }, 1000);
+    </script>
+    <script src="react-basics.js"></script>
+  </body>
+</html>
