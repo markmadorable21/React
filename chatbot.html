@@ -44,19 +44,22 @@
         );
       }
 
-      const div = (
-        <>
-          <p>Chatbot</p>
-          <ChatInput />
-          <ChatMessage message="hello badeng" sender="user" />
-          <ChatMessage message="Happy pride month" sender="robot" />
-          <ChatMessage message="Bayot si Bernard" sender="user" />
-          <ChatMessage message="Araw ng mga bayot" sender="robot" />
-        </>
-      );
+      function App() {
+        return (
+          <>
+            <p>Chatbot</p>
+            <ChatInput />
+            <ChatMessage message="hello badeng" sender="user" />
+            <ChatMessage message="Happy pride month" sender="robot" />
+            <ChatMessage message="Bayot si Bernard" sender="user" />
+            <ChatMessage message="Araw ng mga bayot" sender="robot" />
+          </>
+        );
+      }
+
       const container = document.querySelector('.js-container');
       const root = ReactDOM.createRoot(container);
-      root.render(div);
+      root.render(<App />);
       // setInterval(() => {
       //   root.render(<p>Current time: {dayjs().format('HH:mm:ss')}</p>);
       // }, 1000);
