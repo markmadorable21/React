@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Lesson 4 Exercises</title>
+    <style>
+      .green-button,
+      .red-button {
+        color: white;
+        padding: 10px 15px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+      }
+      .red-button {
+        background-color: rgb(220, 53, 69);
+      }
+
+      .green-button {
+        background-color: rgb(25, 135, 84);
+      }
+
+      .signup-button {
+        margin-left: 5px;
+      }
+
+      .signup-button,
+      .login-button {
+        margin-top: 10px;
+        background-color: rgb(0, 123, 255);
+        color: white;
+        padding: 10px 15px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .password-input,
+      .email-input {
+        width: 200px;
+        padding: 8px;
+        border-radius: 4px;
+      }
+
+      .email-input {
+        margin-bottom: 5px;
+      }
+
+      .show-button {
+        margin-left: 6px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+    <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/chatbot.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      // useEffect = run some code after the component is created or updated
+
+      function Clock() {
+        return (
+          <>
+            <p>Current time: {dayjs().format('HH:mm:ss')}</p>
+          </>
+        );
+      }
+      function Website() {
+        const [showPassword, setShowPassword] = React.useState(false);
+
+        function doThisWhenButtonIsClicked() {
+          console.log('Clicked');
+          setShowPassword(!showPassword);
+        }
+        return (
+          <>
+            <h2>Hello, welcome to my portfolio</h2>
+            <div>
+              <input placeholder="Email" className="email-input" />
+            </div>
+            <div>
+              <input
+                placeholder="Password"
+                className="password-input"
+                type={showPassword ? 'text' : 'password'}
+              />
+              <button
+                className="show-button"
+                onClick={doThisWhenButtonIsClicked}
+              >
+                {showPassword ? 'Hide' : 'Show'}
+              </button>
+            </div>
+            <div>
+              <button className="login-button">Login</button>
+              <button className="signup-button">Sign up</button>
+            </div>
+          </>
+        );
+      }
+      function Button() {
+        const [isButtonOn, setIsButtonOn] = React.useState(false);
+        const [buttonLabel, setButtonLabel] = React.useState('OFF');
+
+        function doThisWhenButtonIsClicked() {
+          console.log('Clicked');
+          isButtonOn
+            ? (setButtonLabel('OFF'), setIsButtonOn(false))
+            : (setButtonLabel('ON'), setIsButtonOn(true));
+        }
+        return (
+          <>
+            <button
+              className={isButtonOn ? 'green-button' : 'red-button'}
+              onClick={doThisWhenButtonIsClicked}
+            >
+              {buttonLabel}
+            </button>
+          </>
+        );
+      }
+      function App() {
+        return (
+          <>
+            <Website />
+          </>
+        );
+      }
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App />);
+    </script>
+  </body>
+</html>
