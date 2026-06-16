@@ -65,12 +65,25 @@
       // useEffect = run some code after the component is created or updated
 
       function Clock() {
+        const [time, setTime] = React.useState(dayjs().format('HH:mm:ss'));
+
+        React.useEffect(() => {
+          setInterval(() => {
+            setTime(dayjs().format('HH:mm:ss'));
+            console.log('run code');
+          }, 1000);
+
+          // Important: make sure to give React.useEffect()
+          // a dependency array of [] so it only runs once!
+        }, []);
+
         return (
           <>
-            <p>Current time: {dayjs().format('HH:mm:ss')}</p>
+            <p>Current time: {time}</p>
           </>
         );
       }
+
       function Website() {
         const [showPassword, setShowPassword] = React.useState(false);
 
@@ -128,7 +141,7 @@
       function App() {
         return (
           <>
-            <Website />
+            <Clock />
           </>
         );
       }

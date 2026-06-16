@@ -24,27 +24,19 @@
           setCount(count + 1);
         }
 
-        if (count === 1) {
-          return (
-            <>
-              <button onClick={clickButton}>Clicked {count} time</button>
-            </>
-          );
-        }
-        return (
-          <>
-            <button onClick={clickButton}>Clicked {count} times</button>
-          </>
-        );
-      }
-
-      function Reset({ count, setCount }) {
-        function clickResetButton() {
+        function clickedResetButton() {
           setCount(0);
         }
+        function toggleAutoClickButton() {
+          console.log('Clicked');
+        }
         return (
           <>
-            <button onClick={clickResetButton}>Reset</button>
+            <button onClick={clickButton}>
+              {count === 1 ? 'Clicked 1 time' : `Clicked ${count} times`}
+            </button>
+            <button onClick={clickedResetButton}>Reset</button>
+            <button onClick={toggleAutoClickButton}>Auto Click</button>
           </>
         );
       }
@@ -56,8 +48,6 @@
         return (
           <>
             <Counter count={count} setCount={setCount} />
-            <Counter count={count} setCount={setCount} />
-            <Reset count={count} setCount={setCount} />
           </>
         );
       }
