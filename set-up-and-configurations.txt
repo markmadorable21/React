@@ -10,7 +10,8 @@ Proper React Set-up
 
 5. npm install
 
-6. npm run dev
+6. npm run dev (to run bitch cd project-name then npm run dev)
+
 
 7. files explanation
 

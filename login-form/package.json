@@ -1,5 +1,5 @@
 {
-  "name": "chatbot-project",
+  "name": "login-form",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,17 +7,11 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "maketestfolder": "mkdir test",
-    "removetestfolder": "rmdir test"
+    "preview": "vite preview"
   },
   "dependencies": {
-    "axios": "^1.18.0",
-    "cheerio": "^1.2.0",
-    "dayjs": "^1.11.21",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "supersimpledev": "^8.6.4"
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
