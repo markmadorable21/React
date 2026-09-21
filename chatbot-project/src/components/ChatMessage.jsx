@@ -1,10 +1,11 @@
+import dayjs from 'dayjs';
 import RobotProfileImage from '../assets/robot.png';
 import UserProfileImage from '../assets/user.png';
 import './ChatMessage.css'; // feature of Vite for importing CSS files
-import dayjs from 'dayjs';
 
-export function ChatMessage({ message, sender }) {
-  const time = dayjs().valueOf();
+
+export function ChatMessage({ message, sender, time}) {
+  
   // const message = props.message;
   // const sender = props.sender;
   // const { message, sender } = props;
@@ -29,7 +30,12 @@ export function ChatMessage({ message, sender }) {
       )}
       <div className="chat-message-text">
         {message}
-        <p className="message-time-text"> {dayjs(time).format('h:mma')}</p>
+         {/* The "time && (" check is optional. I added it just to be safe. */}
+       
+          <div className='chat-message-time'>
+            {dayjs(time).format('h:mma')}
+          </div>
+      
       </div>
       {sender === 'user' && (
         <img src={UserProfileImage} className="chat-message-profile" />

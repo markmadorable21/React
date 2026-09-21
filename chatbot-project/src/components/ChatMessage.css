@@ -23,9 +23,11 @@
   width: 45px;
 }
 
-.message-time-text {
+
+.chat-message-time
+ {
   font-size: 14px;
-  margin: 0;
+  color: rgb(125, 125, 125);
   margin-top: 5px;
-  color: gray;
 }
+
