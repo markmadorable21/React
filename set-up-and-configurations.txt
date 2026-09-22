@@ -30,7 +30,7 @@ Proper React Set-up
 
     7.5.2 to install eslint, use Extension tab
     
-  7.6 index.html = contains the html elements same with file chatbot.html
+  7.6 / = contains the html elements same with file chatbot.html
 
     7.6.1 main difference is that it loads to a different file
 
