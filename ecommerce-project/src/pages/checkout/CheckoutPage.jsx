@@ -1,6 +1,6 @@
 import './CheckoutHeader.css';
 import './CheckoutPage.css';
-import { Header } from '../components/Header.jsx';
+import { Header } from '../../components/Header.jsx';
 import { CheckoutHeader } from './CheckoutHeader.jsx';
 
 export function CheckoutPage() {
