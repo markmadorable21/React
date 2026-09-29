@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
+  // add proxy to the backend server for API requests and images 
   plugins: [react()],
   server: {
     proxy: {
