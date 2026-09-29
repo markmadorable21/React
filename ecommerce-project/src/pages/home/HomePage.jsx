@@ -9,6 +9,9 @@ export function HomePage({ cart }) {
 
   useEffect(() => {
     const getHomeData = async () => {
+      // using axios instead of fetch to make API requests to the backend server. 
+      // This is because axios automatically handles JSON parsing and provides a simpler API 
+      // for making HTTP requests.
       const response = await axios.get('/api/products');
       setProducts(response.data);
     };
