@@ -1,6 +1,6 @@
 import '../components/Header.css';
 import './HomePage.css';
-import { Header } from '../components/Header.jsx';
+import { Header } from '../../components/Header.jsx';
 // install react-router using npm install react-router@7.8.0
 export function HomePage() {
   return (
